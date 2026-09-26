@@ -1,0 +1,48 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Send Requests To Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+RewriteCond %{HTTP_REFERER} !^http://39bc1404835aa6fdba8b6853e6b5df9c.6086d2dc-a1ab-48db-b708-e11b3df63dea-internalonly.spacecharged.site/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://39bc1404835aa6fdba8b6853e6b5df9c.6086d2dc-a1ab-48db-b708-e11b3df63dea-internalonly.spacecharged.site$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://6086d2dc-a1ab-48db-b708-e11b3df63dea-internalonly.spacecharged.site/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://6086d2dc-a1ab-48db-b708-e11b3df63dea-internalonly.spacecharged.site$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://alshorooqoasis.ae/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://alshorooqoasis.ae$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.39bc1404835aa6fdba8b6853e6b5df9c.6086d2dc-a1ab-48db-b708-e11b3df63dea-internalonly.spacecharged.site/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.39bc1404835aa6fdba8b6853e6b5df9c.6086d2dc-a1ab-48db-b708-e11b3df63dea-internalonly.spacecharged.site$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.6086d2dc-a1ab-48db-b708-e11b3df63dea-internalonly.spacecharged.site/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.6086d2dc-a1ab-48db-b708-e11b3df63dea-internalonly.spacecharged.site$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.alshorooqoasis.ae/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.alshorooqoasis.ae$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://39bc1404835aa6fdba8b6853e6b5df9c.6086d2dc-a1ab-48db-b708-e11b3df63dea-internalonly.spacecharged.site/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://39bc1404835aa6fdba8b6853e6b5df9c.6086d2dc-a1ab-48db-b708-e11b3df63dea-internalonly.spacecharged.site$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://6086d2dc-a1ab-48db-b708-e11b3df63dea-internalonly.spacecharged.site/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://6086d2dc-a1ab-48db-b708-e11b3df63dea-internalonly.spacecharged.site$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://alshorooqoasis.ae/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://alshorooqoasis.ae$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.39bc1404835aa6fdba8b6853e6b5df9c.6086d2dc-a1ab-48db-b708-e11b3df63dea-internalonly.spacecharged.site/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.39bc1404835aa6fdba8b6853e6b5df9c.6086d2dc-a1ab-48db-b708-e11b3df63dea-internalonly.spacecharged.site$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.6086d2dc-a1ab-48db-b708-e11b3df63dea-internalonly.spacecharged.site/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.6086d2dc-a1ab-48db-b708-e11b3df63dea-internalonly.spacecharged.site$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.alshorooqoasis.ae/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.alshorooqoasis.ae$      [NC]
+RewriteRule .*\.(jpg|jpeg|gif|png|bmp)$ - [F,NC]
+
