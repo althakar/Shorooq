@@ -16,7 +16,10 @@ define('LARAVEL_START', microtime(true));
 |
 */
 
-if (file_exists($maintenance = __DIR__.'/../AlshorooqBackend/storage/framework/maintenance.php')) {
+// Define the root path explicitly for Vercel's environment container
+$rootPath = dirname(__DIR__);
+
+if (file_exists($maintenance = $rootPath . '/AlshorooqBackend/storage/framework/maintenance.php')) {
     require $maintenance;
 }
 
@@ -31,7 +34,7 @@ if (file_exists($maintenance = __DIR__.'/../AlshorooqBackend/storage/framework/m
 |
 */
 
-require __DIR__.'/../AlshorooqBackend/vendor/autoload.php';
+require $rootPath . '/AlshorooqBackend/vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +47,7 @@ require __DIR__.'/../AlshorooqBackend/vendor/autoload.php';
 |
 */
 
-$app = require_once __DIR__.'/../AlshorooqBackend/bootstrap/app.php';
+$app = require_once $rootPath . '/AlshorooqBackend/bootstrap/app.php';
 
 $kernel = $app->make(Kernel::class);
 
